@@ -1,3 +1,9 @@
 .image-resize{
 	max-height: 258px;
 }
+.width-95{
+	width: 97%;
+}
+.ol-uncollapsible{
+	display: none;
+}
