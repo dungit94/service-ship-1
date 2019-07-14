@@ -1,4 +1,15 @@
-<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
+    <!-- head -->
+    <head th:fragment="base_head(title, isDatetimepicker, metas, links, scripts)">
+        <!-- Meta -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        
+    </head>
+
+    <!-- header -->
+    <header th:fragment="base_header()">
     <!-- Static navbar -->
     	<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
@@ -10,7 +21,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand page-scroll" style="height: 60px;" href="#page-top"><img src="images/logoADang.jpg" style="    height: 60px;" alt="Salog A Đăng"></a>
+					<a class="navbar-brand page-scroll" style="height: 60px;" href="#page-top"><img src="images/logoADang.jpg" style="height: 60px;" alt="SALON A.ĐĂNG"></a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -21,24 +32,11 @@
 						<li>
 							<a class="page-scroll" href="#page-top">Home</a>
 						</li>
-						<li>
-							<a class="page-scroll" href="#about">[[#{home.title.locate}]]</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#features">[[#{home.title.service}]]</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#portfolio">[[#{home.title.hair-sample}]]</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#partners" >partner</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#team">Team</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#contact">Contact</a>
-						</li>
+						 <th:block th:if="${not #lists.isEmpty(session.listCategory)}" th:each="menu : ${session.listCategory}">
+							<li >
+								<a class="page-scroll" th:href="${menu.getSessionId()}" th:text="${menu.getName()}"></a>
+							</li>
+					     </th:block>
 						<li>
 							 <a th:href="@{/index?lang=en}"><img src="images/flag-en.png" alt="En" class="img-language-en" /></a>
 						</li>
@@ -51,17 +49,16 @@
 			</div>
 			<!-- /.container-fluid -->
 		</nav>
-		<header>
+
 			<div class="container-fluid">
 				<div class="slider-container">
-
 						<div class="owl-slider owl-carousel">
 							<div class="item">
 								<div class="owl-slider-item">
 									<img src="images/demo/kgiantiem.jpg" class="img-responsive" alt="portfolio">
 									<div class="intro-text">
 										<div class="intro-lead-in">We are the number one</div>
-										<div class="intro-heading">Hãy tin tưởng chúng tôi</div>
+										<div class="intro-heading">HÃY TIN CHÚNG TÔI</div>
 									</div>
 								</div>
 							</div>
@@ -70,7 +67,7 @@
 									<img src="images/demo/kgiantiem.jpg" class="img-responsive" alt="portfolio">
 									<div class="intro-text">
 										<div class="intro-lead-in">We are the number one</div>
-										<div class="intro-heading">Hãy tin tưởng chúng tôi</div>
+										<div class="intro-heading">HÃY TIN CHÚNG TÔI</div>
 									</div>
 								</div>
 							</div>
@@ -79,7 +76,7 @@
 									<img src="images/demo/kgiantiem.jpg" class="img-responsive" alt="portfolio">
 									<div class="intro-text">
 										<div class="intro-lead-in">We are the number one</div>
-										<div class="intro-heading">Hãy tin tưởng chúng tôi</div>
+										<div class="intro-heading">HÃY TIN CHÚNG TÔI</div>
 									</div>
 								</div>
 							</div>
@@ -87,5 +84,6 @@
 
 				</div>
 			</div>
-		</header>
-</div>
+    </header>
+</html>
+
