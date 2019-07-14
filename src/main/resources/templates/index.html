@@ -32,77 +32,19 @@
 				<div class="row">
 					<div class="col-lg-12 text-center">
 						<div class="section-title">
-							<h2>[[#{service.title}]]</h2>
+							<h2>[[#{home.title.service}]]</h2>
 						</div>
 					</div>
 				</div>
 				<div class="row row-gutter">
-					<div class="col-md-4 col-gutter">
+					
+					<div class="col-md-4 col-gutter" th:if="${lstServiceResponseDto !=null && lstServiceResponseDto.size() > 0}"
+							th:each="item: ${lstServiceResponseDto}">
 						<div class="featured-item">
-							<div class="featured-icon"><i class="fa fa-television"></i></div>
+							<div class="featured-icon"><i th:class="${item.getLinkImage()}"></i></div>
 							<div class="featured-text">
-								<h4>Fully Responsive Design</h4>
-								<p>INFRA theme looks awesome at any size, be it a Laptop screen, Mobile or Tablet.</p>
-							</div>
-						</div>
-						<div class="featured-item">
-							<div class="featured-icon"><i class="fa fa-cogs"></i></div>
-							<div class="featured-text">
-								<h4>Advanced Control Panel</h4>
-								<p>You can take full control of your theme with our powerful yet easy-to-use theme options panel from setting to styling.</p>
-							</div>
-						</div>
-						<div class="featured-item">
-							<div class="featured-icon"><i class="fa fa-newspaper-o"></i></div>
-							<div class="featured-text">
-								<h4>Custom Page Templates</h4>
-								<p>Our themes come packaged with multiple pages templates including Authors Team, Full Width, and more to enhance your site.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-gutter">
-						<div class="featured-item">
-							<div class="featured-icon"><i class="fa fa-indent"></i></div>
-							<div class="featured-text">
-								<h4>Unlimited Widget Areas</h4>
-								<p>We include just the right amount of useful widget areas and sidebars so you can place your content.</p>
-							</div>
-						</div>
-						<div class="featured-item">
-							<div class="featured-icon"><i class="fa fa-paste"></i></div>
-							<div class="featured-text">
-								<h4>Custom Widgets</h4>
-								<p>We include our own widgets for Reviews, Social, Advertising and additional custom widgets to enhance your site.</p>
-							</div>
-						</div>
-						<div class="featured-item">
-							<div class="featured-icon"><i class="fa fa-dollar"></i></div>
-							<div class="featured-text">
-								<h4>AD Management</h4>
-								<p>You can place various size of banner images in your sidebar and banners to other ad positions with ease.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-gutter">
-						<div class="featured-item">
-							<div class="featured-icon"><i class="fa fa-font"></i></div>
-							<div class="featured-text">
-								<h4>Icons and Fonts</h4>
-								<p>We include FontAwesome Icons &amp; Hundreds of Google Fonts to Choose from to customize your site.</p>
-							</div>
-						</div>
-						<div class="featured-item">
-							<div class="featured-icon"><i class="fa fa-wordpress"></i></div>
-							<div class="featured-text">
-								<h4>Compatible with Latest WordPress</h4>
-								<p>We continuously test our themes so you will know they are always compatible with the latest version of WordPress.</p>
-							</div>
-						</div>
-						<div class="featured-item">
-							<div class="featured-icon"><i class="fa fa-file-code-o"></i></div>
-							<div class="featured-text">
-								<h4>Bootstrap Framework</h4>
-								<p>The theme is based on Bootstrap framework. We use default row/col- Bootstrap grid system.</p>
+								<h4 th:text="${item.getTitle()}"></h4>
+								<p th:text="${item.getContent()}"></p>
 							</div>
 						</div>
 					</div>
@@ -121,88 +63,17 @@
 			</div>
 			<div class="row row-0-gutter">
 				<!-- start portfolio item -->
-				<div class="col-md-4 col-0-gutter">
+				
+				<div class="col-md-4 col-0-gutter" th:if="${lstHairSampleResponseDto !=null && lstHairSampleResponseDto.size() > 0}"
+							th:each="item: ${lstHairSampleResponseDto}">
 					<div class="ot-portfolio-item image-box">
 						<figure class="effect-bubba">
-							<img src="images/demo/kieu1.jpg" alt="img02" class="img-responsive image-resize" />
-							<div class="image" style="background-image:url(images/demo/kieu1.jpg);"></div>
+							<img th:src="${item.getLinkImage()}" alt="img02" class="img-responsive image-resize" />
+							<div class="image" style="background-image:url('${item.getLinkImage()}');"></div>
 							<figcaption>
-								<h2>Dean & Letter</h2>
-								<p>Branding, Design</p>
+								<h2 th:text="${item.getTitle()}"></h2>
+								<p th:text="${item.getContent()}"></p>
 								<a href="#" data-toggle="modal" data-target="#Modal-1">View more</a>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<!-- end portfolio item -->
-				<!-- start portfolio item -->
-				<div class="col-md-4 col-0-gutter">
-					<div class="ot-portfolio-item image-box">
-						<figure class="effect-bubba">
-							<img src="images/demo/kieu2.jpg" alt="img02" class="img-responsive image-resize" />
-							<div class="image" style="background-image:url(images/demo/kieu2.jpg);"></div>
-							<figcaption>
-								<h2>Dean & Letter</h2>
-								<p>Branding, Design</p>
-								<a href="#" data-toggle="modal" data-target="#Modal-1">View more</a>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<!-- end portfolio item -->
-				<!-- start portfolio item -->
-				<div class="col-md-4 col-0-gutter image-box">
-					<div class="ot-portfolio-item">
-						<figure class="effect-bubba">
-							<img src="images/demo/portfolio-3.jpg" alt="img02" class="img-responsive" />
-							<figcaption>
-								<h2>Lamp & Velvet</h2>
-								<p>Branding, Web Design</p>
-								<a href="#" data-toggle="modal" data-target="#Modal-3">View more</a>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<!-- end portfolio item -->
-			</div>
-			<div class="row row-0-gutter">
-				<!-- start portfolio item -->
-				<div class="col-md-4 col-0-gutter">
-					<div class="ot-portfolio-item">
-						<figure class="effect-bubba">
-							<img src="images/demo/portfolio-4.jpg" alt="img02" class="img-responsive" />
-							<figcaption>
-								<h2>Smart Name</h2>
-								<p>Branding, Design</p>
-								<a href="#" data-toggle="modal" data-target="#Modal-4">View more</a>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<!-- end portfolio item -->
-				<!-- start portfolio item -->
-				<div class="col-md-4 col-0-gutter">
-					<div class="ot-portfolio-item">
-						<figure class="effect-bubba">
-							<img src="images/demo/portfolio-5.jpg" alt="img02" class="img-responsive" />
-							<figcaption>
-								<h2>Fast People</h2>
-								<p>Branding, Web Design</p>
-								<a href="#" data-toggle="modal" data-target="#Modal-5">View more</a>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<!-- end portfolio item -->
-				<!-- start portfolio item -->
-				<div class="col-md-4 col-0-gutter">
-					<div class="ot-portfolio-item">
-						<figure class="effect-bubba">
-							<img src="images/demo/portfolio-6.jpg" alt="img02" class="img-responsive" />
-							<figcaption>
-								<h2>Kites & Stars</h2>
-								<p>Branding, Web Design</p>
-								<a href="#" data-toggle="modal" data-target="#Modal-2">View more</a>
 							</figcaption>
 						</figure>
 					</div>
@@ -213,10 +84,16 @@
 		</section>
 		<section class="dark-bg short-section stats-bar">
 			<div class="container text-center">
-				<div class="row">
+				<div class="row owl-partners owl-carousel">
 					<div class="col-md-3 mb-sm-30">
 						<div class="counter-item">
-							<h2 class="stat-number" data-n="9">0</h2>
+							<h2 class="stat-number" data-n="90">0</h2>
+							<h6>awards</h6>
+						</div>
+					</div>
+					<div class="col-md-3 mb-sm-30">
+						<div class="counter-item">
+							<h2 class="stat-number" data-n="90">0</h2>
 							<h6>awards</h6>
 						</div>
 					</div>
@@ -291,73 +168,60 @@
 				<div class="row">
 					<div class="col-lg-12 text-center">
 						<div class="section-title">
-							<h2>Our Team</h2>
+							<h2>[[#{home.title.our.team}]]</h2>
 							<p>A creative agency based on Candy Land, ready to boost your business with some beautifull templates. MOOZ Agency is one of the best in town see more you will be amazed.</p>
 						</div>
 					</div>
 				</div>
+				
 				<div class="row">
-					<!-- team member item -->
-					<div class="col-md-4">
-						<div class="team-item">
-							<div class="team-image">
-								<img src="images/demo/author-2.jpg" class="img-responsive" alt="author">
-							</div>
-							<div class="team-text">
-								<h3>TOM BEKERS</h3>
-								<div class="team-position">CEO & Web Design</div>
-								<p>Mida sit una namet, cons uectetur adipiscing adon elit. Aliquam vitae barasa droma.</p>
-								<div class="team-socials">
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-youtube"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
+					<div class="col-md-12 text-center">
+						<div class="owl-partners owl-carousel">
+							<div class="item" th:if="${lstourTeamResponseDto !=null && lstourTeamResponseDto.size() > 0}"
+								th:each="item: ${lstourTeamResponseDto}">
+								<div class="team-item">
+									<div class="team-image">
+										<img th:src="${item.getLinkImage()}" class="img-responsive" alt="author">
+									</div>
+									<div class="team-text">
+										<h3 th:text="${item.getName()}"></h3>
+										<div class="team-position" th:text="${item.getPosition()}"></div>
+										<p th:text="${item.getContent()}"></p>
+										<div class="team-socials">
+											<a href="#"><i class="fa fa-twitter"></i></a>
+											<a href="#"><i class="fa fa-facebook"></i></a>
+											<a href="#"><i class="fa fa-youtube"></i></a>
+											<a href="#"><i class="fa fa-google-plus"></i></a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- end team member item -->
-					<!-- team member item -->
-					<div class="col-md-4">
-						<div class="team-item">
-							<div class="team-image">
-								<img src="images/demo/author-6.jpg" class="img-responsive" alt="author">
-							</div>
-							<div class="team-text">
-								<h3>LINA GOSATA</h3>
-								<div class="team-position">Photography</div>
-								<p>Worsa dona namet, cons uectetur dipiscing adon elit. Aliquam vitae fringilla unda mir.</p>
-								<div class="team-socials">
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-youtube"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- end team member item -->
-					<!-- team member item -->
-					<div class="col-md-4">
-						<div class="team-item">
-							<div class="team-image">
-								<img src="images/demo/author-4.jpg" class="img-responsive" alt="author">
-							</div>
-							<div class="team-text">
-								<h3>John BEKERS</h3>
-								<div class="team-position">Marketing</div>
-								<p>Dolor sit don namet, cons uectetur beriscing adon elit. Aliquam vitae fringilla unda.</p>
-								<div class="team-socials">
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-youtube"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- end team member item -->
 				</div>
+				<!-- <div class="row owl-partners owl-carousel">
+					team member item
+						<div class="col-md-4" th:if="${lstourTeamResponseDto !=null && lstourTeamResponseDto.size() > 0}"
+							th:each="item: ${lstourTeamResponseDto}">
+							<div class="team-item">
+							<div class="team-image">
+								<img th:src="${item.getLinkImage()}" class="img-responsive" alt="author">
+							</div>
+							<div class="team-text">
+								<h3 th:text="${item.getName()}"></h3>
+								<div class="team-position" th:text="${item.getPosition()}"></div>
+								<p th:text="${item.getContent()}"></p>
+								<div class="team-socials">
+									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+									<a href="#"><i class="fa fa-youtube"></i></a>
+									<a href="#"><i class="fa fa-google-plus"></i></a>
+								</div>
+							</div>
+						</div>
+						</div>
+					end team member item
+				</div> -->
 			</div>
 		</section>
 		<section id="contact" class="dark-bg">
