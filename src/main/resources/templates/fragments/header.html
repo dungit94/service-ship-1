@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
 
     <!-- head -->
-    <head th:fragment="base_head(title, isDatetimepicker, metas, links, scripts)">
+    <head th:fragment="base_head()">
         <!-- Meta -->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         
@@ -37,24 +37,6 @@
 								<a class="page-scroll" th:href="${menu.getSessionId()}" th:text="${menu.getName()}"></a>
 							</li>
 					     </th:block>
-						<li>
-							<a class="page-scroll" href="#about">[[#{home.title.locate}]]</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#features">[[#{home.title.service}]]</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#portfolio">[[#{home.title.hair-sample}]]</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#partners" >partner</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#team">[[#{home.title.team}]]</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#contact">Contact</a>
-						</li>
 						<li>
 							 <a th:href="@{/index?lang=en}"><img src="images/flag-en.png" alt="En" class="img-language-en" /></a>
 						</li>
