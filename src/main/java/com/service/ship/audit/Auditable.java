@@ -1,4 +1,4 @@
-package com.service.ship.model;
+package com.service.ship.audit;
 
 import java.util.Date;
 
@@ -16,7 +16,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public abstract class AuditingModel<T> {
+public abstract class Auditable<T> {
 
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
