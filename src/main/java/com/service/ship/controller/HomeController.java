@@ -19,7 +19,7 @@ import com.service.ship.model.ServiceResponseDto;
 @Controller
 public class HomeController {
 
-	@Value("${title.message}")
+//	@Value("${title.message}")
 	private String title;
 
     @Autowired
