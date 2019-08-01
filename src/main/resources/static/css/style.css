@@ -1013,3 +1013,11 @@ and (max-width : 480px) {
 	font-size: 20px;
 }
 }
+.item-login{
+ background-color: #4CAF50;
+  color: white;
+  padding: 9px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}

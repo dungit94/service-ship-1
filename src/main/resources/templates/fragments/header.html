@@ -5,7 +5,6 @@
     <head th:fragment="base_head()">
         <!-- Meta -->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        
     </head>
 
     <!-- header -->
@@ -43,13 +42,56 @@
 						<li>
 							 <a th:href="@{/index?lang=vi}"><img src="images/flag-vn.png" alt="En" class="flag-vn.png" /></a>
 						</li>
+						<li>
+						<th:bock th:if="${#request.userPrincipal != null}">
+						  <a class="item-login" th:href="@{/logout}">Logout</a>
+						</th:bock>
+						<th:bock th:unless="${#request.userPrincipal != null}">
+                          <button class="item-login" id ="show-modal" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                        </th:bock>
+							<div id="id01" class="modal">
+							  <form class="modal-content animate" id="loginForm" th:action="@{/j_spring_security_check}" method='POST'>
+	                               <div class="imgcontainer">
+							      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+							      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+							    </div>
+							 <!-- /login?error=true -->
+                              <div th:if="${#request.getParameter('error') == 'true'}"
+                                    style="color:red;margin:10px 0px;">
+                                 Login Failed!!!<br />
+                                 Reason :
+                                 <span th:if="${#session!= null and #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}"
+                                    th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}">
+                                        Static summary
+                                 </span>
+                              </div>
+							
+							    <div class="container">
+							      <label for="uname"><b>Username</b></label>
+							      <input type="text" placeholder="Enter Username" name="username" required>
+							
+							      <label for="psw"><b>Password</b></label>
+							      <input type="password" placeholder="Enter Password" name="password" required>
+							        
+							      <button type="submit">Login</button>
+							      <label>
+							        <input type="checkbox" checked="checked" name="remember-me"> Remember me
+							      </label>
+							    </div>
+							
+							    <div class="container" style="background-color:#f1f1f1">
+							      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+							      <span class="psw">Forgot <a href="#">password?</a></span>
+							    </div>
+							  </form>
+							</div>
+                        </li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
 			</div>
 			<!-- /.container-fluid -->
 		</nav>
-
 			<div class="container-fluid">
 				<div class="slider-container">
 						<div class="owl-slider owl-carousel">
@@ -81,9 +123,9 @@
 								</div>
 							</div>
 						</div>
-
 				</div>
 			</div>
     </header>
+    <script th:src="@{/js/modal-login.js}"></script>
 </html>
 
