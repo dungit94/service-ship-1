@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.service.ship.model.UserModel;
+import com.service.ship.model.user.UserModel;
 
 @Repository
 @Transactional

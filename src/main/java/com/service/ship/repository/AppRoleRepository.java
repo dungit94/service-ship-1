@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.service.ship.model.RoleModel;
+import com.service.ship.model.user.UserRoleModel;
 
 @Repository
 @Transactional
@@ -19,8 +19,8 @@ public class AppRoleRepository {
     private EntityManager entityManager;
  
     public List<String> getRoleNames(Long userId) {
-        String sql = "Select ur.appRole.roleName from " + RoleModel.class.getName() + " ur " //
-                + " where ur.appUser.userId = :userId ";
+        String sql = "Select ur.roleModel.roleName from " + UserRoleModel.class.getName() + " ur " //
+                + " where ur.userModel.userId = :userId ";
  
         Query query = this.entityManager.createQuery(sql, String.class);
         query.setParameter("userId", userId);

@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.service.ship.model.UserModel;
+import com.service.ship.model.user.UserModel;
 import com.service.ship.repository.AppRoleRepository;
 import com.service.ship.repository.AppUserRepository;
 

@@ -1,6 +1,5 @@
-package com.service.ship.model;
+package com.service.ship.model.user;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
